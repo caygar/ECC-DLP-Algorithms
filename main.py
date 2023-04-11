@@ -1,3 +1,7 @@
+"""
+Using out prewritten test files, we test the runtime of our algorithms.
+"""
+
 from elliptic import EllipticCurve
 from time import time
 from algorithm import naive_bsgs, polhig_hellman
@@ -21,16 +25,22 @@ def read_test(filename: str):
 
 
 def main():
-    E, P, Q, q, d = read_test("test1.txt")
-    start = time()
-    print(naive_bsgs(P.x, P.y, Q.x, Q.y, E, q=q) == d)
-    end = time()
-    print(end - start)
+    for i in range(1,4):
+        print(f"TEST {i}#")
+        E, P, Q, q, d = read_test(f"test{i}.txt")
+        start = time()
+        print(f"Baby-step Giant-step #{i}")
+        print(naive_bsgs(P.x, P.y, Q.x, Q.y, E, q=q) == d)
+        end = time()
+        print(end - start)
+        print("=====================")
 
-    start = time()
-    print(polhig_hellman(P.x, P.y, Q.x, Q.y, E, q=q) == d)
-    end = time()
-    print(end - start)
+        print(f"Polhig Hellman #{i}")
+        start = time()
+        print(polhig_hellman(P.x, P.y, Q.x, Q.y, E, q=q) == d)
+        end = time()
+        print(end - start)
+        print("=====================")
 
 
 if __name__ == '__main__':
