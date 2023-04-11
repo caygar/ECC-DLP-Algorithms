@@ -19,8 +19,8 @@ The Pohlig-Hellman algorithm is a method for solving the discrete logarithm prob
 To use this implementation, you can clone the repository or download the code as a ZIP file.
 
 ```bash
-$ git clone https://github.com/your-username/elliptic-curve-cryptography.git
-$ cd elliptic-curve-cryptography
+$ git clone https://github.com/h38464874b/ECC-DLP-Algorithms.git
+$ cd ECC-DLP-Algorithms
 ```
 
 You can then import the classes and functions in your Python code as needed.
