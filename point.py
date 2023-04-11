@@ -1,3 +1,22 @@
+"""
+Implementation of a 'Point' on an Elliptic Curve over a finite field.
+
+It contains a number of methods:
+
+    reducemod: Reduce a number modulo p
+    equal: Checks for equality between 2 points using the previous method
+    inverse: Calculate the inverse of a number modulo p
+    negate: Negate a point
+
+It also overloads a number of methods:
+    __add__: Add points
+    __sub__: Substract points
+    __mul__: Scale a point by multiplication with a scalar
+    __eq__: Check for equality between two points' coordinates
+    __str__: Return the coordinates in "(x,y)" format
+    __hash__: Hash by both coordinates.
+"""
+
 class Point:
     def __init__(self, x, y, a, b, p):
         self.x = x
